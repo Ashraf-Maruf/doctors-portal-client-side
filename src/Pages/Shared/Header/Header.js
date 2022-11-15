@@ -5,11 +5,11 @@ const Header = () => {
 
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/About'>About</Link></li>
-        <li><Link to='/Appointment'>Appointment</Link></li>
-        <li><Link to='/Reviews'>Reviews</Link></li>
-        <li><Link to='/ContactUs'>Contact Us</Link></li>
-        <li><Link to='/Login'>Login</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/appointment'>Appointment</Link></li>
+        <li><Link to='/reviews'>Reviews</Link></li>
+        <li><Link to='/contactUs'>Contact Us</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </React.Fragment>
 
     return (
