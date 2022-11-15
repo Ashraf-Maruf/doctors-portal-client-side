@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-const Login = () => {
-    const { register, handleSubmit } = useForm();
-    
-    const handleLogin = data =>{
+const SignUp = () => {
+    const { register, handleSubmit } = useForm();    
+    const handleSignUp = data =>{
         console.log(data)
     }
 
     return (
         <div className='h-[800px] flex justify-center items-center mx-5'>
-            <div className="card w-[385px] h-[480px] bg-base-100 shadow-xl">
+            <div className="card w-[385px] h-[556px] bg-base-100 shadow-xl">
                 <div className="card-body flex-grow-0">
-                    <h3 className='text-center text-2xl font-normal'>Login</h3>
-                    <form onSubmit={handleSubmit(handleLogin)}>                       
+                    <h3 className='text-center text-2xl font-normal'>Sign Up</h3>
+                    <form onSubmit={handleSubmit(handleSignUp)}>
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input {...register("name")} type='text' placeholder="Your Name" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
@@ -25,9 +28,9 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Forget Password</span>
                         </label>
-                        <input type="submit" value='Login' className='btn btn-primary w-full text-white' />
+                        <input type="submit" value='Sign Up' className='btn btn-primary w-full text-white' />
                     </form>
-                    <p className='h-0'>New to Doctors Portal?<Link to='/signup' className=' text-secondary ml-4'>Create new account</Link></p>
+                    <p className='h-0'>New to Doctors Portal?<Link className=' text-secondary ml-4'>Create new account</Link></p>
                     <div className="divider">OR</div>
                     <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
                 </div>
@@ -36,4 +39,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;
