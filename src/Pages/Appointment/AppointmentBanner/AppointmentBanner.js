@@ -3,7 +3,7 @@ import bgchair from '../../../assets/images/bg.png';
 import AppointmentChair from '../../../assets/images/chair.png'
 import { DayPicker } from 'react-day-picker';
 
-const AppointmentBanner = ({slectedDate,setSlectedDate}) => {   
+const AppointmentBanner = ({selectedDate,setSelectedDate}) => {   
     return (
         <header>
             <div className="hero lg:h-screen"
@@ -16,8 +16,8 @@ const AppointmentBanner = ({slectedDate,setSlectedDate}) => {
                     <div className=' lg:mr-32'>
                         <DayPicker
                             mode='single'
-                            selected={slectedDate}
-                            onSelect={setSlectedDate}
+                            selected={selectedDate}
+                            onSelect={setSelectedDate}
                         />
                        
                     </div>

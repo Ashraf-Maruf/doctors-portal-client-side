@@ -4,15 +4,15 @@ import AvailableAppointments from '../AvailableAppointments/AvailableAppointment
 
 
 const Appointment = () => {
-    const [slectedDate, setSlectedDate] = useState(new Date());
+    const [selectedDate, setSelectedDate] = useState(new Date());
     return (
         <section className='mx-5 '>
             <AppointmentBanner
-                slectedDate={slectedDate}
-                setSlectedDate={setSlectedDate}
+                selectedDate={selectedDate}
+                setSelectedDate={setSelectedDate}
             ></AppointmentBanner>
             <AvailableAppointments
-                slectedDate={slectedDate}
+                selectedDate={selectedDate}
             ></AvailableAppointments>
         </section>
     );
