@@ -58,6 +58,7 @@ const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
                     <form onSubmit={handleBooking} className=' grid grid-cols-1 lg:grid-cols-1 gap-5'>
                         <input type="text" disabled value={date} className="input input-bordered input-md w-full" />
                         <select name='slot' className="select select-bordered w-full">
+                            slots &&
                             {
                                 slots.map((slot, i) => <option
                                     key={i}
