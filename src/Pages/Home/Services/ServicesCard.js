@@ -11,25 +11,25 @@ const ServicesCard = () => {
             id: 1,
             icon: fluoride,
             name: 'Fluoride Treatment',
-            title: 'Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the'
+            title: 'Fluoride is a naturally occurring mineral that helps build strong teeth and prevent cavities.'
         },
         {
             id: 2,
             icon: cavity,
             name: 'Cavity Filling',
-            title: 'Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the'
+            title: 'While a set of dazzling white teeth certainly project a lovely smile and also boost one’s confidence, unfortunately, numerous problems plague oral health'
         },
         {
             id: 3,
             icon: whitening,
             name: 'Teeth Whitening',
-            title: 'Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the'
+            title: 'Teeth whitening is a cosmetic procedure that is used to make the surface of the teeth appear whiter'
         }
     ]
 
     return (
         <div>
-            <div className=' my-36'>
+            <div className='my-28'>
                 <div className=' mb-16 text-center'>
                     <h5 className=' mb-2 font-bold text-secondary uppercase'>Our Services</h5>
                     <h4 className='text-3xl font-normal'>Services We Provide</h4>

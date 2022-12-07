@@ -8,12 +8,14 @@ import TestimonialCard from '../Testimonial/TestimonialCard';
 
 const Home = () => {
     return (
-        <div className='mx-5'>
-            <Banner></Banner>
-            <InfoCard></InfoCard>
-            <ServicesCard></ServicesCard>
-            <MakeAppointment></MakeAppointment>
-            <TestimonialCard></TestimonialCard>
+        <div>
+            <div className='w-10/12 mx-auto'>
+                <Banner></Banner>
+                <InfoCard></InfoCard>
+                <ServicesCard></ServicesCard>
+                <MakeAppointment></MakeAppointment>
+                <TestimonialCard></TestimonialCard>                
+            </div>
             <Contact></Contact>
         </div>
     );

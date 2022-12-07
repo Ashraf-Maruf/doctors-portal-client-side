@@ -1,0 +1,11 @@
+.navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(:not(ul).active), .navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(*:not(ul):active) {
+    --tw-bg-opacity: 1;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: hsl(var(--pc) / var(--tw-text-opacity));
+}
+
+.navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(*:not(ul):focus), .navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(*:not(ul):hover) {
+    background-color: transparent;
+    --tw-bg-opacity: 0.1;
+}

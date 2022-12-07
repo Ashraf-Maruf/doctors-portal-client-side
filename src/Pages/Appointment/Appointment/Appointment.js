@@ -6,7 +6,7 @@ import AvailableAppointments from '../AvailableAppointments/AvailableAppointment
 const Appointment = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     return (
-        <section className='mx-5 '>
+        <section className='max-w-[1440px] mx-auto'>
             <AppointmentBanner
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}

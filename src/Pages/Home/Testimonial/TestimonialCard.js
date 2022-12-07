@@ -45,10 +45,10 @@ const TestimonialCard = () => {
             <div className='  pb-20 flex justify-between items-center'>
                 <div>
                     <h5 className='mb-2 font-bold text-secondary uppercase'>Testimonial</h5>
-                    <h4>What Our Patients Says</h4>
+                    <h4 className=' xl:text-3xl text-4xl'>What Our Patients Says</h4>
                 </div>
                 <figure>
-                    <img className='w-[192px] h-[156px]' src={quote} alt='' />
+                    <img className='xl:w-[192px] xl:h-[156px] h-[100px]' src={quote} alt='' />
                 </figure>
             </div>
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

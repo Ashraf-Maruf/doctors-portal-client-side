@@ -4,6 +4,7 @@ import {
     getAuth,
     onAuthStateChanged,
     signInWithEmailAndPassword,
+    signInWithPopup,
     signOut,
     updateProfile,
    } from 'firebase/auth'
@@ -21,6 +22,11 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null); // This is user information will be
     const [loading, setLoading] = useState(true)
+
+    const googleProviderLogin = (provider) => {
+        setLoading(true);
+        return signInWithPopup(auth, provider)
+    }
 
     const userCreateAccount = (email,password) =>{
         setLoading(true)
@@ -47,7 +53,6 @@ const AuthProvider = ({children}) => {
     useEffect( () =>{
 
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-            console.log('user observing');
             setUser(currentUser)
             setLoading(false)
         });
@@ -62,7 +67,8 @@ const AuthProvider = ({children}) => {
         userCreateAccount,
         userSignInAccount,
         userSignOutAccount,
-        UserUpdateProfile
+        UserUpdateProfile,
+        googleProviderLogin
     }
 
 

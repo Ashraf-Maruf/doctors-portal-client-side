@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import Loading from '../../Shared/Loading/Loading';
+import { toast } from 'react-hot-toast';
 
 const ManageDoctors = () => {
     const [deletingDoctor, setDeletingDoctor] = useState(null)
@@ -13,7 +14,7 @@ const ManageDoctors = () => {
         queryFn: async () => {
 
             try {
-                const res = await fetch('http://localhost:5000/doctors', {
+                const res = await fetch('https://doctors-portal-server-nine-alpha.vercel.app/doctors', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -29,7 +30,7 @@ const ManageDoctors = () => {
     });
     const handleDeleteDoctor = doctor => {
         console.log(doctor)
-        fetch(`http://localhost:5000/doctors/${doctor._id}`, {
+        fetch(`https://doctors-portal-server-nine-alpha.vercel.app/doctors/${doctor._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +40,7 @@ const ManageDoctors = () => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     refetch()
-                    alert(`Doctor ${doctor.name} delete successfully`)
+                    toast.success(`Doctor ${doctor.name} delete successfully`)
                 }
             })
     }
@@ -51,6 +52,7 @@ const ManageDoctors = () => {
     return (
         <div>
             <div className="overflow-x-auto">
+                <h3 className=' mb-[30px] pt-[45px] text-3xl font-bold'>Manage Doctors: {doctors.length}</h3>
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -80,7 +82,7 @@ const ManageDoctors = () => {
                                 <td>{doctor.email}</td>
                                 <td>{doctor.specialty}</td>
                                 <td>
-                                    < label onClick={() => setDeletingDoctor(doctor)} htmlFor="confirmation-modal" className="btn btn-sm btn-error" >Delete</label >
+                                    < label onClick={() => setDeletingDoctor(doctor)} htmlFor="confirmation-modal" className="btn btn-accent text-white" >Delete</label >
                                 </td>
                             </tr>)
                         }

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { format } from 'date-fns';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
-    const { name, slots } = treatment;
+    const { name, slots, price } = treatment;
     const date = format(selectedDate, 'PP');
     const { user } = useContext(AuthContext);
 
@@ -21,11 +22,12 @@ const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
             patient: fullName,
             slot,
             phone,
-            email
+            email,
+            price
         }
 
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://doctors-portal-server-nine-alpha.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +70,10 @@ const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
                         <input name='fullName' type="text" disabled defaultValue={user?.displayName} placeholder="Full Name" className="input input-bordered input-md w-full" required />
                         <input name='phone' type="text" placeholder="Phone Number" className="input input-bordered input-md w-full" />
                         <input name='email' type="text" disabled defaultValue={user?.email} placeholder="Email" className="input input-bordered input-md w-full" readOnly />
-                        <input type="submit" value='Submit' className="btn btn-accent text-white w-full" />
+                        {
+                            user? <input type="submit" value='Submit' className="btn btn-accent text-white w-full" />:
+                            <Link className='btn btn-accent w-full' to='/login'>Submit</Link>
+                        }
                     </form>
                 </div>
             </div>

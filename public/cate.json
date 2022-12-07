@@ -1,0 +1,48 @@
+[
+    {
+        "companyname": "Toyota",
+        "images": "https://i.ibb.co/25VZYHM/pexels-revac-film-s-photography-205337.jpg",
+        "products": [
+            {
+                "id": "1",
+                "originalPrice": "1,740,000",
+                "resalePrice": "1,700,000",
+                "picture": "https://i.ibb.co/94CyXrW/Toyota-Corolla-Altis-Sedan-Car-Price-In-Bangladesh.jpg",
+                "companyName": "Toyota",
+                "year": "2",
+                "location": "Chattogram",
+                "post": "20-10-2022"
+            },
+            {
+                "id": "2",
+                "originalPrice": "3,800,000",
+                "resalePrice": "3,500,000",
+                "picture": "https://i.ibb.co/ZNdnj7K/img-1920x-5db261478fb4c1-70046310-46200305.jpg",
+                "companyName": "Toyota",
+                "year": "3",
+                "location": "Dhaka",
+                "post": "15-11-2022"
+            },
+            {
+                "id": "3",
+                "originalPrice": "1,280,000",
+                "resalePrice": "1,220,000",
+                "picture": "https://i.ibb.co/kQy79fX/Toyota-Camry-XSE-2019.png",
+                "companyName": "Toyota",
+                "year": "1",
+                "location": "Chattogram",
+                "post": "10-12-2022"
+            },
+            {
+                "id": "4",
+                "originalPrice": "1,350,000",
+                "resalePrice": "1,250.000",
+                "picture": "https://i.ibb.co/25VZYHM/pexels-revac-film-s-photography-205337.jpg",
+                "companyName": "Toyota",
+                "year": "3",
+                "location": "Khulna",
+                "post": "20-12-2022"
+            }
+        ]
+    }
+]

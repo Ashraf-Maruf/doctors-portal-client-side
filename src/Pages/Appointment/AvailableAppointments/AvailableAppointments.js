@@ -7,31 +7,33 @@ import Loading from '../../Shared/Loading/Loading';
 
 const AvailableAppointments = ({ selectedDate }) => {
     const [treatment, setTreatment] = useState(null)
-    const date = format(selectedDate,'PP');
+    const date = format(selectedDate, 'PP');
     const { data: appointmentsOption = [], refetch, isLoading } = useQuery({
         queryKey: ['appointmentOption', date],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/appointmentOption?date=${date}`);
+            const res = await fetch(`https://doctors-portal-server-nine-alpha.vercel.app/appointmentOption?date=${date}`);
             const data = await res.json();
             return data
         }
     })
 
-    if(isLoading){
+    if (isLoading) {
         return <Loading></Loading>
     }
 
     return (
-        <section className="my-32">
-            <p className='text-center text-secondary font-normal mb-24'>You have selected date: {format(selectedDate, 'PP')}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {
-                    appointmentsOption.map(appointmentOption => <AppointmentOption
-                        key={appointmentOption._id}
-                        appointmentOption={appointmentOption}
-                        setTreatment={setTreatment}
-                    ></AppointmentOption>)
-                }
+        <section className="xl:my-32 xl:mx-6">
+            <p className='text-center text-secondary font-normal xl:mb-24 mb-6 md:text-4xl xl:text-3xl xl:mt-5 mt-5'>Available Appointments on {format(selectedDate, 'PP')}</p>
+            <div className=' lg:mx-6 md:mx-6 xl:mx-0 mx-6'>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                    {
+                        appointmentsOption.map(appointmentOption => <AppointmentOption
+                            key={appointmentOption._id}
+                            appointmentOption={appointmentOption}
+                            setTreatment={setTreatment}
+                        ></AppointmentOption>)
+                    }
+                </div>
             </div>
             {
                 treatment &&
