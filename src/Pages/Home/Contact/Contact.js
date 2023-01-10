@@ -1,5 +1,6 @@
 import React from 'react';
 import appointment from '../../../assets/images/appointment.png'
+import { toast } from 'react-hot-toast';
 const Contact = () => {
     const handleBooking = event => {
         event.preventDefault();
@@ -7,7 +8,7 @@ const Contact = () => {
         const email = form.email.value;
         const subject = form.subject.value;
         const message = form.message.value;
-        console.log(email,subject,message)
+        console.log(email, subject, message)
 
         const contact = {
             userEmail: email,
@@ -27,11 +28,11 @@ const Contact = () => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('Your booking done')  
-                    form.reset()                
+                    toast.success(`Your message send successfully`)
+                    form.reset()
                 }
-                else{
-                    alert('You already have a booking on')
+                else {
+                    toast.error(`You already message send`)
                 }
             })
         // console.log(booking)        

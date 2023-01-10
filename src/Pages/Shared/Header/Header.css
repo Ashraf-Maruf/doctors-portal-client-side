@@ -1,12 +1,140 @@
-.navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(:not(ul).active), .navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(*:not(ul):active) {
-    --tw-bg-opacity: 1;
-    background-color:transparent;
-    --tw-text-opacity: 1;
-    color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(*:not(ul):focus), .navbar-menu :where(li:not(.navbar-menu-title):not(:empty)) > :where(*:not(ul):hover) {
+.navbar {
+    width: 100%;
+    height: 50px;
+    left: 0px;
     background-color: transparent;
-    --tw-bg-opacity: 0.1;
+    transition-duration: 1.5s;
+    position: relative;
+    border-radius: 0px 0px 0px 0px;
 }
 
+.navbar:hover {
+    border-radius: 50px 0px 20px 0px;
+}
+
+.open-nav {
+    color: #0FCFEC;
+    font-size: 40px;
+    transition-duration: 0.5s;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.close-nav {
+    color: #0FCFEC;
+    font-size: 40px;
+    line-height: 0;
+    cursor: pointer;
+}
+
+
+.navbar-menu {
+    list-style: none;
+}
+
+.navbar-menu li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-menu li a {
+    color: #000000;
+    padding: 15px 20px;
+    font-weight: 400;
+    line-height: 21px;
+
+}
+
+.navbar-menu li a:hover {
+    color: #D4D9E3;
+    background-color: #3A4256;
+    border-radius: 8px;
+}
+
+@media (min-width: 320px) {
+    .activeOpen {
+        left: -20px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 250px;
+    }
+}
+
+@media (min-width: 360px) {
+    .activeOpen {
+        left: -20px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 300px;
+    }
+}
+
+@media (min-width: 375px) {
+    .activeOpen {
+        left: -25px;
+        top: 62px;
+    }
+
+    .menu-area {
+        width: 320px;
+    }
+}
+
+@media (min-width: 640px) {
+    .activeOpen {
+        left: -20px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 340px;
+    }
+}
+
+@media (min-width: 658px) {
+    .activeOpen {
+        left: -20px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 340px;
+    }
+}
+
+@media (min-width: 712px) {
+    .activeOpen {
+        left: -20px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 340px;
+    }
+}
+
+@media (min-width: 768px) {
+    .activeOpen {
+        left: -62px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 340px;
+    }
+}
+
+@media (min-width: 820px) {
+    .activeOpen {
+        left: -33px;
+        top: 66px;
+    }
+
+    .menu-area {
+        width: 340px;
+    }
+}

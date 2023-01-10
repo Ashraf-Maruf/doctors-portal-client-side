@@ -18,14 +18,14 @@ const DashboardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="navbar-menu menu pl-3 pt-10 w-80 md:bg-base-100 lg:bg-base-100 xl:bg-transparent  text-base-content">
+                    <ul className="navbar-menu menu pl-3 pt-10 w-80 bg-base-100 md:bg-base-100 lg:bg-base-100 xl:bg-transparent  text-base-content">
                         <li><Link className='hover:bg-slate-100 rounded-l-lg' to='/dashboard'>My Appointments</Link></li>
                         {
                             isAdmin && <>
                                 <li><Link className=' hover:bg-slate-100 rounded-l-lg' to='/dashboard/allusers'>All Users</Link></li>
                                 <li><Link className=' hover:bg-slate-100 rounded-l-lg' to='/dashboard/adddoctor'>Add a Doctor</Link></li>
                                 <li><Link className=' hover:bg-slate-100 rounded-l-lg' to='/dashboard/managedoctors'>Manage Doctors</Link></li>
-                                <li><Link className=' hover:bg-slate-100 rounded-l-lg'  to='/dashboard/contact'>User Message</Link></li>                            
+                                <li><Link className=' hover:bg-slate-100 rounded-l-lg' to='/dashboard/contact'>User Message</Link></li>
                             </>
                         }
                     </ul>

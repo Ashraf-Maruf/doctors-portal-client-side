@@ -7,34 +7,34 @@ const InfoCard = () => {
 
     const InfoCardData = [
         {
-            id:1,
-            name:"Opening Hours",
+            id: 1,
+            name: 'Opening Hours',
+            description: 'Open 9.00 am to 5.00pm everyday',
             icon: clock,
-            title:'Opening hours are 9.30am–5.45pm, Mon–Fri.',
-            bgClass: 'bg-gradient-to-r from-secondary to-primary'
+            bgClass: 'bg-gradient-to-r from-primary to-secondary'
         },
         {
-            id:2,
-            name:"Visit our location",
-            icon:marker,
-            title:'Brooklyn, NY 10036, United States',
+            id: 2,
+            name: 'Our Locations',
+            description: 'Open 9.00 am to 5.00pm everyday',
+            icon: marker,
             bgClass: 'bg-accent'
         },
         {
-            id:3,
-            icon:phone,
-            name:"Contact us now",
-            title:'+000 123 456789',
-            bgClass: 'bg-gradient-to-r from-secondary to-primary'
-        }
+            id: 3,
+            name: 'Contact Us',
+            description: 'Open 9.00 am to 5.00pm everyday',
+            icon: phone,
+            bgClass: 'bg-gradient-to-r from-primary to-secondary'
+        },
     ]
 
     return (
         <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
-                InfoCardData.map(card => <InfoCards                    
+                InfoCardData.map(card => <InfoCards
                     key={card.id}
-                    card={card}                
+                    card={card}
                 ></InfoCards>)
             }
         </div>

@@ -26,7 +26,7 @@ const MyAppointment = () => {
     }
     return (
         <div>
-            <h3 className=' mb-[30px] pt-[45px] text-3xl font-semibold'>My Appointments {bookings.len}</h3>
+            <h3 className=' mb-[30px] pt-[45px] text-3xl font-semibold'>My Appointments {bookings.length}</h3>
             <div className="overflow-x-auto rounded-none">
                 <table className="table w-full">
                     <thead>

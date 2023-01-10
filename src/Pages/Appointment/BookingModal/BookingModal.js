@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { format } from 'date-fns';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { Link } from 'react-router-dom';
-
-const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
+import { toast } from 'react-hot-toast';
+const BookingModal = ({ treatment, selectedDate, setTreatment, refetch }) => {
     const { name, slots, price } = treatment;
     const date = format(selectedDate, 'PP');
     const { user } = useContext(AuthContext);
@@ -39,11 +39,11 @@ const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
                 console.log(data);
                 if (data.acknowledged) {
                     setTreatment(null)
-                    alert('Your booking done')
+                    toast.success('Your booking done')
                     refetch()
                 }
-                else{
-                    alert('You already have a booking on')
+                else {
+                    toast.success('You already have a booking on')
                 }
             })
         // console.log(booking)        
@@ -71,8 +71,8 @@ const BookingModal = ({ treatment, selectedDate, setTreatment,refetch }) => {
                         <input name='phone' type="text" placeholder="Phone Number" className="input input-bordered input-md w-full" />
                         <input name='email' type="text" disabled defaultValue={user?.email} placeholder="Email" className="input input-bordered input-md w-full" readOnly />
                         {
-                            user? <input type="submit" value='Submit' className="btn btn-accent text-white w-full" />:
-                            <Link className='btn btn-accent w-full text-white' to='/login'>Submit</Link>
+                            user ? <input type="submit" value='Submit' className="btn btn-accent text-white w-full" /> :
+                                <Link className='btn btn-accent w-full text-white' to='/login'>Submit</Link>
                         }
                     </form>
                 </div>
